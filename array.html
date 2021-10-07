@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio de registro de notas</title>
+    <link rel="stylesheet" href="css/array.css">
+</head>
+<body>
+    <div class='contenedor'>
+        <h1>Registros de notas</h1>
+        <form action="#" method="POST">
+            <label>Nombre</label><input type="text" id="Nombre"><br>
+            <label>Nota1</label><input type="text" id="Nota1"><br>
+            <label>Nota2</label><input type="text" id="Nota2"><br>
+            <label>Nota3</label><input type="text" id="Nota3"><br>
+            <input type="button" value="Registrar" class="registrar" onclick="Registar_Notas();">
+        </form>
+    </div>
+
+    <table>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Nota1</th>
+        <th>Nota2</th>
+        <th>Nota3</th>
+        <tbody id="Tabla">    
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    var estudiantes=[];
+    function Registar_Notas(){
+        var Nombre=document.getElementById('Nombre').value;
+        var Nota1=document.getElementById('Nota1').value;
+        var Nota2=document.getElementById('Nota2').value;
+        var Nota3=document.getElementById('Nota3').value;
+    estudiantes.push (
+        {"Nombre":Nombre,"Nota1":Nota1,"Nota2":Nota2,"Nota3":Nota3}
+    );
+  Listar_Notas();
+  document.getElementById('Nombre').value="";
+  document.getElementById('Nota1').value="";
+  document.getElementById('Nota2').value="";
+  document.get
+    }
+
+    function Listar_Notas(){
+        var Listado='<tr>';
+            for(var i=0;i<estudiantes.length;i++){
+                Listado +="<td>"+i+"</td>";
+                Listado +="<td>"+estudiantes[i].Nombre+"</td>";
+                Listado +="<td>"+estudiantes[i].Nota1+"</td>";
+                Listado +="<td>"+estudiantes[i].Nota2+"</td>";
+                Listado +="<td>"+estudiantes[i].Nota3+"</td>";
+                Listado +="</tr>";
+            }
+            document.getElementById('Tabla').innerHTML=Listado;
+        }
+  </script>
